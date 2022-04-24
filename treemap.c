@@ -102,14 +102,14 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
   if(tree->current->right->pair->key != NULL){
-    treeNode aux = tree->current->right;
+    TreeNode aux = tree->current->right;
     while(aux->left != NULL){
       aux = aux->left;
     }
     tree->current = aux;
     return aux->pair;
   }else{
-    treeNode aux = tree->current->parent;
+    TreeNode aux = tree->current->parent;
     while (aux < tree->current){
       aux = aux->parent;
     }

@@ -83,3 +83,44 @@ treemap.c:119:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 6d62241
+Sun Apr 24 20:28:12 UTC 2022: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:105:20: error: invalid initializer
+     TreeNode aux = tree->current->right;
+                    ^~~~
+treemap.c:106:14: error: invalid type argument of ‘->’ (have ‘TreeNode {aka struct TreeNode}’)
+     while(aux->left != NULL){
+              ^~
+treemap.c:107:16: error: invalid type argument of ‘->’ (have ‘TreeNode {aka struct TreeNode}’)
+       aux = aux->left;
+                ^~
+treemap.c:109:19: error: incompatible types when assigning to type ‘TreeNode * {aka struct TreeNode *}’ from type ‘TreeNode {aka struct TreeNode}’
+     tree->current = aux;
+                   ^
+treemap.c:110:15: error: invalid type argument of ‘->’ (have ‘TreeNode {aka struct TreeNode}’)
+     return aux->pair;
+               ^~
+treemap.c:112:20: error: invalid initializer
+     TreeNode aux = tree->current->parent;
+                    ^~~~
+treemap.c:113:16: error: invalid operands to binary < (have ‘TreeNode {aka struct TreeNode}’ and ‘TreeNode * {aka struct TreeNode *}’)
+     while (aux < tree->current){
+                ^ ~~~~~~~~~~~~~
+treemap.c:114:16: error: invalid type argument of ‘->’ (have ‘TreeNode {aka struct TreeNode}’)
+       aux = aux->parent;
+                ^~
+treemap.c:116:19: error: incompatible types when assigning to type ‘TreeNode * {aka struct TreeNode *}’ from type ‘TreeNode {aka struct TreeNode}’
+     tree->current = aux;
+                   ^
+treemap.c:117:15: error: invalid type argument of ‘->’ (have ‘TreeNode {aka struct TreeNode}’)
+     return aux->pair;
+               ^~
+treemap.c:119:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+624a661
