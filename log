@@ -34,3 +34,52 @@ Sun Apr 24 19:10:04 UTC 2022:
  tests:  13|5
 total_score: 15/70
 ef7c7bb
+Sun Apr 24 20:27:48 UTC 2022: 
+ treemap.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:105:5: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+     treeNode aux = tree->current->right;
+     ^~~~~~~~
+     TreeNode
+treemap.c:105:20: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+     treeNode aux = tree->current->right;
+                    ^~~~
+treemap.c:106:14: error: invalid type argument of ‘->’ (have ‘int’)
+     while(aux->left != NULL){
+              ^~
+treemap.c:107:16: error: invalid type argument of ‘->’ (have ‘int’)
+       aux = aux->left;
+                ^~
+treemap.c:109:19: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     tree->current = aux;
+                   ^
+treemap.c:110:15: error: invalid type argument of ‘->’ (have ‘int’)
+     return aux->pair;
+               ^~
+treemap.c:112:5: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+     treeNode aux = tree->current->parent;
+     ^~~~~~~~
+     TreeNode
+treemap.c:112:20: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+     treeNode aux = tree->current->parent;
+                    ^~~~
+treemap.c:113:16: error: comparison between pointer and integer [-Werror]
+     while (aux < tree->current){
+                ^
+treemap.c:114:16: error: invalid type argument of ‘->’ (have ‘int’)
+       aux = aux->parent;
+                ^~
+treemap.c:116:19: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     tree->current = aux;
+                   ^
+treemap.c:117:15: error: invalid type argument of ‘->’ (have ‘int’)
+     return aux->pair;
+               ^~
+treemap.c:119:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+6d62241
