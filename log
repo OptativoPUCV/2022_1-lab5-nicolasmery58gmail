@@ -155,3 +155,14 @@ treemap.c:106:29: note: each undeclared identifier is reported only once for eac
 cc1: all warnings being treated as errors
 Compilation failed
 7c96164
+Sun Apr 24 21:55:14 UTC 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:106:29: error: ‘aux’ undeclared (first use in this function)
+     tree->current = minimum(aux->right);
+                             ^~~
+treemap.c:106:29: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+9715790

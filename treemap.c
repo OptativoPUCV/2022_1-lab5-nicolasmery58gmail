@@ -103,7 +103,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
   TreeNode * node = tree->current;
   if(node->right != NULL){
-    tree->current = minimun(aux->right);
+    tree->current = minimum(aux->right);
     return tree->current->pair;
   }else{
     TreeNode * aux = node;
