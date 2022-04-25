@@ -103,19 +103,16 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  TreeNode * node = tree->current;
-  if(node->right != NULL){
-    tree->current = minimum(node->right);
+  TreeNode * node;
+  if(tree->current->right != NULL){
+    node = minimum(tree->current->right);
   }else{
-    while(node->parent != NULL && tree->lower_than(node->pair->key,node->parent->pair->key)!=1){
-      
-      node=node->parent;
-  
+    while(tree->current->parent != NULL && tree->lower_than(tree->current->pair->key,tree->current->parent->pair->key) != 1){
+      tree->current = tree->current->parent;
     }
-    tree->current = node;
+    node = tree->current->parent;
   }
-  if(tree->current == NULL){
-    return NULL;
-  }
+  tree->current = node;
+  if(tree->current == NULL) return NULL;
   return node->pair;
 }
