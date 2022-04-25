@@ -93,7 +93,16 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+  Pair * aux;
+  if(searchTreeMap(tree,key) != NULL){
+    aux = searchTreeMap(tree,key);
+  }else{
+    if(tree->lower_than(tree->current->pair->key,key) != 1){
+      return tree->current->pair;
+    }
+    aux = nextTreeMap(tree);
+  }
+  return aux;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
